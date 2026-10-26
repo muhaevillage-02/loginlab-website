@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHG5NNPNLF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZHG5NNPNLF');
+</script>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LOGin Lab · 청년 번아웃 회복 프로젝트 신청</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF5;
+    --bg-warm: #F4F1E8;
+    --card: #FFFFFF;
+    --ink: #0E0E0E;
+    --ink-soft: #2A2A2A;
+    --ink-mid: #555555;
+    --ink-light: #8A8A8A;
+    --line: #E5E2D7;
+    --line-strong: #2A2A2A;
+    --lime: #C8E600;
+    --lime-deep: #A8C400;
+    --lime-soft: #EEF7B5;
+    --warm: #FFE7B5;
+    --shadow-sm: 0 2px 8px rgba(20, 20, 20, 0.04);
+    --shadow-md: 0 6px 20px rgba(20, 20, 20, 0.08);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    background-image:
+      linear-gradient(rgba(20, 20, 20, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20, 20, 20, 0.025) 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-attachment: fixed;
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+    color: var(--ink);
+    line-height: 1.65;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+
+  /* TOP BAR */
+  .topbar {
+    background: var(--ink);
+    color: #fff;
+    padding: 10px 24px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .topbar-left { display: flex; align-items: center; gap: 16px; }
+  .topbar-dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: var(--lime);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--lime);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--ink);
+    color: #fff;
+    padding: 56px 24px 72px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .header-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+
+  /* Logo */
+  .logo {
+    display: inline-block;
+    margin-bottom: 28px;
+  }
+  .logo-svg { display: block; }
+
+  .lab-tag {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 5px 14px;
+    border: 1px solid var(--lime);
+    color: var(--lime);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border-radius: 999px;
+  }
+
+  .header-title {
+    font-size: 30px;
+    font-weight: 900;
+    color: #fff;
+    margin: 28px 0 12px;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
+  }
+
+  .header-title .accent {
+    color: var(--lime);
+    position: relative;
+  }
+
+  .header-sub {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+  }
+
+  .header-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 28px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+  }
+  .header-meta span strong {
+    color: var(--lime);
+    font-weight: 500;
+  }
+
+  /* CONTAINER */
+  .container {
+    max-width: 760px;
+    margin: -40px auto 0;
+    padding: 0 20px 80px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* WELCOME */
+  .welcome {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 32px 32px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+
+  .welcome::before {
+    content: "";
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 48px; height: 4px;
+    background: var(--lime);
+  }
+
+  .welcome-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 12px;
+  }
+
+  .welcome-q {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 18px;
+    letter-spacing: -0.3px;
+  }
+
+  .welcome p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 0 0 12px;
+  }
+
+  .welcome p:last-child { margin-bottom: 0; }
+
+  .highlight {
+    background: linear-gradient(180deg, transparent 60%, var(--lime-soft) 60%);
+    padding: 0 2px;
+    font-weight: 600;
+  }
+
+  /* SECTIONS */
+  .section {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 0;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .section-head {
+    border-bottom: 1px solid var(--line);
+    padding: 22px 32px;
+    background: var(--bg-warm);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-num {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    background: var(--ink);
+    color: var(--lime);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+  }
+
+  .section-titles { flex: 1; min-width: 0; }
+
+  .section-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 4px;
+  }
+
+  .section-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0;
+    letter-spacing: -0.2px;
+  }
+
+  .section-body {
+    padding: 28px 32px;
+  }
+
+  .section-desc {
+    font-size: 14px;
+    color: var(--ink-mid);
+    margin: 0 0 24px;
+    padding: 12px 14px;
+    background: var(--bg);
+    border-left: 3px solid var(--lime);
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* FIELDS */
+  .field {
+    margin-bottom: 22px;
+  }
+  .field:last-child { margin-bottom: 0; }
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  label .req {
+    color: var(--lime-deep);
+    background: var(--ink);
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  .hint {
+    font-size: 12.5px;
+    color: var(--ink-light);
+    margin-top: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.02em;
+  }
+
+  .guide {
+    background: var(--bg-warm);
+    border: 1px dashed var(--line-strong);
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--ink-mid);
+    margin-top: 8px;
+    line-height: 1.6;
+    position: relative;
+  }
+  .guide::before {
+    content: "// TIP";
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--ink);
+    background: var(--lime);
+    padding: 2px 6px;
+    border-radius: 2px;
+    margin-right: 8px;
+    font-weight: 600;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="date"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--line);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14.5px;
+    color: var(--ink);
+    background: #fff;
+    transition: all 0.15s ease;
+    outline: none;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    border-color: var(--ink);
+    box-shadow: 0 0 0 3px var(--lime-soft);
+  }
+
+  textarea {
+    min-height: 110px;
+    resize: vertical;
+    font-family: inherit;
+  }
+
+  /* OPTIONS */
+  .options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .option {
+    flex: 1 1 auto;
+    min-width: 140px;
+    position: relative;
+  }
+
+  .option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .option label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: #fff;
+    border: 1.5px solid var(--line);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    transition: all 0.15s ease;
+    color: var(--ink-soft);
+  }
+
+  .option label::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid var(--line-strong);
+    flex-shrink: 0;
+    transition: all 0.15s ease;
+  }
+
+  .option.checkbox label::before {
+    border-radius: 3px;
+  }
+
+  .option label:hover {
+    border-color: var(--ink);
+    background: var(--bg-warm);
+  }
+
+  .option input:checked + label {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff;
+  }
+
+  .option input:checked + label::before {
+    background: var(--lime);
+    border-color: var(--lime);
+    box-shadow: inset 0 0 0 3px var(--ink);
+  }
+
+  .option.checkbox input:checked + label::before {
+    background: var(--lime) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230E0E0E' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>") center / 11px no-repeat;
+    box-shadow: none;
+  }
+
+  .options-vertical .option {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+
+  .options-vertical .option label {
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+
+  .options-vertical .option label::before {
+    margin-top: 3px;
+  }
+
+  .opt-tag {
+    display: inline-block;
+    background: var(--lime);
+    color: var(--ink);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 2px;
+    margin-right: 6px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+  }
+
+  .option input:checked + label .opt-tag {
+    background: var(--lime);
+    color: var(--ink);
+  }
+
+  .opt-desc {
+    font-size: 12.5px;
+    font-weight: 400;
+    color: var(--ink-light);
+    margin-top: 2px;
+  }
+
+  .option input:checked + label .opt-desc {
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  /* FILE UPLOAD */
+  .file-upload {
+    border: 1.5px dashed var(--line-strong);
+    border-radius: 4px;
+    padding: 22px 18px;
+    text-align: center;
+    background: #fff;
+    transition: all 0.15s ease;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .file-upload:hover {
+    border-color: var(--ink);
+    background: var(--lime-soft);
+  }
+
+  .file-upload input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .file-upload-icon {
+    display: inline-block;
+    width: 36px; height: 36px;
+    background: var(--ink);
+    color: var(--lime);
+    border-radius: 4px;
+    line-height: 36px;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .file-upload-text {
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .file-upload-sub {
+    font-size: 12px;
+    color: var(--ink-light);
+    margin-top: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.03em;
+  }
+
+  .file-name {
+    font-size: 13px;
+    color: var(--ink);
+    margin-top: 8px;
+    font-weight: 600;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .file-name:not(:empty)::before {
+    content: "✓ ";
+    color: var(--lime-deep);
+  }
+
+  .badge-required {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--lime);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 2px;
+    margin-left: 6px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+  }
+
+  .badge-optional {
+    display: inline-block;
+    background: var(--bg-warm);
+    color: var(--ink-soft);
+    border: 1px solid var(--line-strong);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 2px;
+    margin-left: 6px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+  }
+
+  /* CALLOUT */
+  .callout {
+    background: var(--bg-warm);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--lime-deep);
+    padding: 18px 20px;
+    border-radius: 4px;
+  }
+  .callout-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--ink-light);
+    margin-bottom: 10px;
+  }
+  .callout p { color: var(--ink-soft); font-size: 14.5px; }
+
+  /* PRIZE TABLE */
+  .prize-list {
+    display: grid;
+    gap: 12px;
+  }
+  .prize-row {
+    padding: 18px 20px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    transition: all 0.15s ease;
+  }
+  .prize-row:hover {
+    border-color: var(--ink);
+    background: var(--bg-warm);
+  }
+  .prize-row.grand {
+    background: var(--ink);
+    color: #fff;
+    border-color: var(--ink);
+  }
+  .prize-row.grand:hover { background: var(--ink); }
+
+  .prize-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .prize-rank {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--lime);
+    color: var(--ink);
+    padding: 4px 10px;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  .prize-row.grand .prize-rank {
+    background: var(--lime);
+    color: var(--ink);
+  }
+  .prize-name {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: var(--ink);
+  }
+  .prize-row.grand .prize-name { color: #fff; }
+  .prize-name-en {
+    font-size: 12px;
+    color: var(--ink-light);
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.05em;
+    margin-left: 6px;
+  }
+  .prize-row.grand .prize-name-en { color: rgba(255, 255, 255, 0.5); }
+
+  .prize-rewards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .prize-row.grand .prize-rewards {
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+  .reward-cell {
+    padding: 12px 14px;
+    background: var(--bg);
+  }
+  .prize-row.grand .reward-cell {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  .reward-cell + .reward-cell {
+    border-left: 1px solid var(--line);
+  }
+  .prize-row.grand .reward-cell + .reward-cell {
+    border-left-color: rgba(255, 255, 255, 0.15);
+  }
+  .reward-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 6px;
+  }
+  .prize-row.grand .reward-label { color: var(--lime); }
+  .reward-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .prize-row.grand .reward-value { color: #fff; font-weight: 500; }
+  .reward-value strong {
+    display: block;
+    font-size: 17px;
+    margin-bottom: 2px;
+  }
+  .reward-value ul {
+    margin: 4px 0 0;
+    padding: 0 0 0 16px;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--ink-mid);
+    line-height: 1.6;
+  }
+  .prize-row.grand .reward-value ul { color: rgba(255, 255, 255, 0.7); }
+  .reward-value li { margin-bottom: 2px; }
+  .reward-sub {
+    font-size: 12px;
+    color: var(--ink-light);
+    margin-top: 4px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .prize-row.grand .reward-sub { color: rgba(255, 255, 255, 0.5); }
+
+  @media (max-width: 540px) {
+    .prize-rewards { grid-template-columns: 1fr; }
+    .reward-cell + .reward-cell { border-left: none; border-top: 1px solid var(--line); }
+    .prize-row.grand .reward-cell + .reward-cell { border-top-color: rgba(255, 255, 255, 0.15); }
+  }
+
+  /* CONSENT */
+  .consent {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 16px 18px;
+    font-size: 13px;
+    color: var(--ink-mid);
+    margin-bottom: 16px;
+    line-height: 1.7;
+  }
+
+  .consent strong {
+    color: var(--ink);
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 700;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* SUBMIT */
+  .submit-area {
+    text-align: center;
+    margin-top: 36px;
+    padding: 32px;
+    background: var(--ink);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .submit-area::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .submit-area-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    margin-bottom: 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    position: relative;
+  }
+
+  .submit-btn {
+    background: var(--lime);
+    color: var(--ink);
+    border: none;
+    padding: 16px 56px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s ease;
+    letter-spacing: 0.5px;
+    position: relative;
+    box-shadow: 4px 4px 0 var(--lime-deep);
+  }
+
+  .submit-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--lime-deep);
+  }
+
+  .submit-btn:active {
+    transform: translate(0, 0);
+    box-shadow: 2px 2px 0 var(--lime-deep);
+  }
+
+  /* TIPS */
+  .tips {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 28px 32px;
+    margin-top: 28px;
+    position: relative;
+  }
+
+  .tips::before {
+    content: "";
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 48px; height: 4px;
+    background: var(--ink);
+  }
+
+  .tips-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 4px;
+  }
+
+  .tips-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 16px;
+  }
+
+  .tip-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    padding: 12px 14px;
+    background: var(--bg);
+    border-radius: 4px;
+  }
+
+  .tip-item:last-child { margin-bottom: 0; }
+  .tip-item strong { color: var(--ink); }
+
+  .tip-num {
+    flex-shrink: 0;
+    width: 24px; height: 24px;
+    background: var(--ink);
+    color: var(--lime);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    margin-top: 1px;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--ink);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 40px 24px;
+    text-align: center;
+    margin-top: 60px;
+  }
+
+  .footer-msg {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .footer-msg .accent { color: var(--lime); }
+
+  .footer-sub {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .footer-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  /* MOBILE */
+  @media (max-width: 640px) {
+    .container { padding: 0 14px 60px; }
+    .header { padding: 40px 20px 60px; }
+    .header-title { font-size: 24px; }
+    .section-head, .section-body, .welcome, .tips { padding-left: 22px; padding-right: 22px; }
+    .submit-btn { padding: 14px 36px; font-size: 14px; }
+    .header-meta { gap: 12px; font-size: 10px; }
+  }
+
+  /* MODAL */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(14, 14, 14, 0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+  }
+
+  .modal-overlay.show { display: flex; }
+
+  .modal {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--lime);
+    border-radius: 4px;
+    padding: 36px 32px;
+    text-align: center;
+    max-width: 440px;
+    width: 100%;
+    box-shadow: var(--shadow-md);
+  }
+
+  .modal-tag {
+    display: inline-block;
+    background: var(--lime);
+    color: var(--ink);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 2px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .modal h3 {
+    font-size: 22px;
+    margin: 0 0 12px;
+    font-weight: 700;
+  }
+
+  .modal p {
+    font-size: 14px;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    margin: 0 0 20px;
+  }
+
+  .modal-btn {
+    background: var(--ink);
+    color: var(--lime);
+    border: none;
+    padding: 12px 32px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="topbar-dot"></span>
+    <span>LOGin Lab · Recruiting Now</span>
+  </div>
+  <div>FORM ID: LQN-2026-BR-001</div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+
+    <!-- LOGin Logo (SVG recreation) -->
+    <div class="logo">
+      <svg class="logo-svg" width="260" height="84" viewBox="0 0 340 110" xmlns="http://www.w3.org/2000/svg" aria-label="LOGin">
+        <defs>
+          <style>
+            .lime-front { fill: #C8E600; }
+            .lime-shadow { fill: #8DA200; }
+          </style>
+        </defs>
+        <!-- 3D shadow layer -->
+        <g class="lime-shadow" transform="translate(8, 8)">
+          <text x="0" y="80" font-family="'Noto Sans KR', sans-serif" font-size="96" font-weight="900" letter-spacing="-4">LOGin</text>
+        </g>
+        <!-- Front layer -->
+        <g class="lime-front">
+          <text x="0" y="80" font-family="'Noto Sans KR', sans-serif" font-size="96" font-weight="900" letter-spacing="-4">LOGin</text>
+        </g>
+      </svg>
+    </div>
+    <div><span class="lab-tag">Youth Wellness Research Lab</span></div>
+
+    <h1 class="header-title">버티는 청년에서,<br><span class="accent">회복하는</span> 청년으로.</h1>
+    <p class="header-sub">청년 번아웃 회복 프로젝트 — 참가자 모집 신청서</p>
+
+    <div class="header-meta">
+      <span>PROJECT · <strong>BURNOUT RECOVERY</strong></span>
+      <span>YEAR · <strong>2026</strong></span>
+      <span>AGE · <strong>19~29</strong></span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- WELCOME -->
+  <section class="welcome">
+    <div class="welcome-label">// Welcome</div>
+    <h2 class="welcome-q">요즘 마음은 좀 어떠신가요?</h2>
+    <p>오늘도 하루를 꿋꿋하게 버텨낸 당신에게 박수를 보냅니다. <strong>LOGin Lab</strong>의 &lt;청년 번아웃 회복 프로젝트&gt;는 "더 열심히 해라"라는 채찍질 대신, 우리가 다시 웃음을 찾을 수 있는 <span class="highlight">'작은 틈'</span>을 만들어보려는 시도입니다.</p>
+    <p>거창한 기획서가 아니어도 괜찮습니다. 당신이 경험한 번아웃과 그것을 이겨내고 싶은 작은 진심을 들려주세요. <span class="highlight">당신의 아이디어가 누군가에게는 다시 시작할 용기가 됩니다.</span></p>
+  </section>
+
+  <!-- PRIZE -->
+  <section class="welcome" style="border-top: 4px solid var(--ink);">
+    <div class="welcome-label">// Prizes &amp; Rewards · 시상 안내</div>
+    <h2 class="welcome-q">당신의 아이디어, 이렇게 보답할게요.</h2>
+    <p style="font-size: 14px; color: var(--ink-mid); margin-bottom: 18px;">선정된 아이디어는 상금과 함께 LOGin Lab의 실행 지원을 통해 실제 프로젝트로 연결됩니다.</p>
+
+    <div class="prize-list">
+
+      <!-- 최우수상 -->
+      <div class="prize-row grand">
+        <div class="prize-head">
+          <span class="prize-rank">최우수상 · 1명</span>
+          <span class="prize-name">Best Insight Award<span class="prize-name-en">· TOP TIER</span></span>
+        </div>
+        <div class="prize-rewards">
+          <div class="reward-cell">
+            <div class="reward-label">// Reward · 물질적 보상</div>
+            <div class="reward-value"><strong>상금 100만 원</strong></div>
+          </div>
+          <div class="reward-cell">
+            <div class="reward-label">// Career Spec · 성장·커리어 보상</div>
+            <div class="reward-value">
+              <strong>'2026 청년 정책 인사이트 리포트' 공동 저자 등재</strong>
+              <div class="reward-sub">포트폴리오에 강력하게 활용 가능한 공식 크레딧</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 우수상 -->
+      <div class="prize-row">
+        <div class="prize-head">
+          <span class="prize-rank">우수상 · 1명</span>
+          <span class="prize-name">Excellence Award<span class="prize-name-en">· INSIGHT TIER</span></span>
+        </div>
+        <div class="prize-rewards">
+          <div class="reward-cell">
+            <div class="reward-label">// Reward · 물질적 보상</div>
+            <div class="reward-value"><strong>상금 30만 원</strong></div>
+          </div>
+          <div class="reward-cell">
+            <div class="reward-label">// Career Spec · 인사이트 구독 지원</div>
+            <div class="reward-value">
+              <strong>프리미엄 인사이트 구독권</strong>
+              <ul>
+                <li>퍼블리(Publy) · 폴인(fol:in)</li>
+                <li>밀리의 서재 · 롱블랙</li>
+              </ul>
+              <div class="reward-sub">위 4종 중 1종 택 1 (1년 구독 기준)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 장려상 -->
+      <div class="prize-row">
+        <div class="prize-head">
+          <span class="prize-rank">장려상 · 7명</span>
+          <span class="prize-name">Encouragement Award<span class="prize-name-en">· SPEC TIER</span></span>
+        </div>
+        <div class="prize-rewards">
+          <div class="reward-cell">
+            <div class="reward-label">// Reward · 물질적 보상</div>
+            <div class="reward-value">
+              <strong>20대 맞춤 스펙 혜택</strong>
+              <div class="reward-sub">아래 3가지 중 택 1~2 선택 가능</div>
+            </div>
+          </div>
+          <div class="reward-cell">
+            <div class="reward-label">// Career Spec · 성장·커리어 옵션</div>
+            <div class="reward-value">
+              <ul>
+                <li>① 현직자 1:1 온라인 커피챗 + 포트폴리오 첨삭</li>
+                <li>② '청년 인사이트 해커' 공식 수료증 (LinkedIn 등록용)</li>
+                <li>③ 정책 실무진 · 전문가 네트워킹 밋업 초대</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 참가상 -->
+      <div class="prize-row">
+        <div class="prize-head">
+          <span class="prize-rank">참가상 · 100명</span>
+          <span class="prize-name">Participation Award<span class="prize-name-en">· OPEN TIER</span></span>
+        </div>
+        <div class="prize-rewards">
+          <div class="reward-cell">
+            <div class="reward-label">// Reward · 물질적 보상</div>
+            <div class="reward-value">
+              <strong>스타벅스 기프티콘 증정</strong>
+              <div class="reward-sub">선착·추첨 100명 한정</div>
+            </div>
+          </div>
+          <div class="reward-cell">
+            <div class="reward-label">// Career Spec · 추가 혜택</div>
+            <div class="reward-value">
+              <strong>LOGin Lab 인사이트 뉴스레터 우선 구독권</strong>
+              <div class="reward-sub">매월 발행되는 청년 인사이트 리포트 구독</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p class="hint" style="margin-top: 14px;">// 시상금은 제세공과금 공제 후 지급되며, 스펙 혜택은 수상자와 별도 협의 후 진행됩니다.</p>
+  </section>
+
+  <form id="applyForm" onsubmit="return handleSubmit(event)">
+
+    <!-- 1. 기본 정보 -->
+    <section class="section">
+      <header class="section-head">
+        <div class="section-num">01</div>
+        <div class="section-titles">
+          <div class="section-meta">PARTICIPANT INFO</div>
+          <h3 class="section-title">기본 정보 — 우리 조금 더 알아가요</h3>
+        </div>
+      </header>
+      <div class="section-body">
+        <p class="section-desc">본 공모는 <strong>개인전</strong>으로 진행됩니다. 신속한 연락과 연령·지역 확인을 위해 필요한 정보이며, 외부에 공유되지 않습니다.</p>
+
+        <div class="field">
+          <label>성함 <span class="req">REQUIRED</span></label>
+          <input type="text" name="name" placeholder="예) 김청년" required />
+        </div>
+
+        <div class="field">
+          <label>생년월일 <span class="req">REQUIRED</span></label>
+          <input type="text" name="birth" placeholder="예) 980509" maxlength="6" required />
+          <p class="hint">// 만 19~29세 청년만 신청 가능합니다.</p>
+        </div>
+
+        <div class="field">
+          <label>거주지 (시 / 구 / 동) <span class="req">REQUIRED</span></label>
+          <input type="text" name="residence" placeholder="예) 서울시 마포구 연남동" required />
+          <p class="hint">// 지역 기반 오프라인 회복 모임 매칭 및 청년 번아웃 지역별 데이터 분석 자료로만 활용됩니다.</p>
+        </div>
+
+        <div class="field">
+          <label>연락처 <span class="req">REQUIRED</span></label>
+          <input type="tel" name="phone" placeholder="01012345678 ('-' 제외)" required />
+          <p class="hint">// 1차 서류 검토 후, 운영팀이 직접 전화로 한 번 더 아이디어에 대해 여쭤보는 짧은 통화가 진행됩니다.</p>
+        </div>
+
+        <div class="field">
+          <label>이메일 주소 <span class="req">REQUIRED</span></label>
+          <input type="email" name="email" placeholder="example@email.com" required />
+          <p class="hint">// 심사 결과 및 안내 사항이 발송됩니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 공모 분야 -->
+    <section class="section">
+      <header class="section-head">
+        <div class="section-num">02</div>
+        <div class="section-titles">
+          <div class="section-meta">PROJECT CATEGORY</div>
+          <h3 class="section-title">공모 분야 선택 — 어떤 이야기를 들려주실 건가요?</h3>
+        </div>
+      </header>
+      <div class="section-body">
+        <p class="section-desc">가장 자신 있는 분야를 골라주세요. 중복 선택도 가능하지만, 제출물은 분야마다 각각 준비해주셔야 합니다.</p>
+
+        <div class="options options-vertical">
+          <div class="option checkbox">
+            <input type="checkbox" id="cat-1" name="category" value="회복 루틴 - 작은 습관 아이디어 내기" />
+            <label for="cat-1">
+              <span><span class="opt-tag">CAT.A</span><strong>회복 루틴</strong> · <em>작은 습관 아이디어 내기</em><div class="opt-desc">예: 퇴근 후 10분 멍 때리기 루틴 / 아침 5분 회복 루틴</div></span>
+            </label>
+          </div>
+          <div class="option checkbox">
+            <input type="checkbox" id="cat-2" name="category" value="공감 콘텐츠 - 창작물 만들어 제출하기" />
+            <label for="cat-2">
+              <span><span class="opt-tag">CAT.B</span><strong>공감 콘텐츠</strong> · <em>창작물 만들어 제출하기</em><div class="opt-desc">예: 번아웃 공감 웹툰, 짧은 영상, 에세이, 일러스트</div></span>
+            </label>
+          </div>
+          <div class="option checkbox">
+            <input type="checkbox" id="cat-3" name="category" value="캠페인 기획 - 캠페인 기획서 제출" />
+            <label for="cat-3">
+              <span><span class="opt-tag">CAT.C</span><strong>캠페인 기획</strong> · <em>캠페인 기획서 제출</em><div class="opt-desc">예: "답장 늦어도 괜찮아" 캠페인 기획안</div></span>
+            </label>
+          </div>
+          <div class="option checkbox">
+            <input type="checkbox" id="cat-4" name="category" value="서비스 아이디어 - 앱 제작 기획서 내기" />
+            <label for="cat-4">
+              <span><span class="opt-tag">CAT.D</span><strong>서비스 아이디어</strong> · <em>앱 제작 기획서 내기</em><div class="opt-desc">예: 감정 기록 앱, 회복 챌린지 앱 기획서</div></span>
+            </label>
+          </div>
+          <div class="option checkbox">
+            <input type="checkbox" id="cat-5" name="category" value="공간·커뮤니티 - 커뮤니티 아이디어 내기" />
+            <label for="cat-5">
+              <span><span class="opt-tag">CAT.E</span><strong>공간·커뮤니티</strong> · <em>어떤 커뮤니티가 만들어지면 좋을지 아이디어 내기</em><div class="opt-desc">예: 조용한 회복 라운지 모임, 동네 회복 살롱</div></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 아이디어 -->
+    <section class="section">
+      <header class="section-head">
+        <div class="section-num">03</div>
+        <div class="section-titles">
+          <div class="section-meta">YOUR IDEA</div>
+          <h3 class="section-title">아이디어 들려주기 — 부담 없이 쓱쓱!</h3>
+        </div>
+      </header>
+      <div class="section-body">
+        <p class="section-desc">당신의 반짝이는 생각을 짧게 요약해주세요. 완성된 글이 아니어도, 구상 단계의 메모여도 괜찮습니다.</p>
+
+        <div class="field">
+          <label>프로젝트(아이디어) 이름 <span class="req">REQUIRED</span></label>
+          <input type="text" name="ideaName" placeholder="기억하기 쉽고 따뜻한 이름이면 더 좋아요" required />
+          <div class="guide">기억하기 쉽고 따뜻한 이름이면 더 좋아요!</div>
+        </div>
+
+        <div class="field">
+          <label>이 프로젝트를 생각하게 된 이유 (참여 동기) <span class="req">REQUIRED</span></label>
+          <textarea name="motivation" placeholder="여기에 솔직한 이야기를 들려주세요..." maxlength="500" required></textarea>
+          <div class="guide">내가 겪었던 번아웃 경험이나, 주변 친구들을 보며 느꼈던 솔직한 생각을 들려주세요. 500자 내외면 충분합니다!</div>
+        </div>
+
+        <div class="field">
+          <label>아이디어 핵심 내용 <span class="req">REQUIRED</span></label>
+          <textarea name="ideaCore" placeholder="무엇을, 어떻게 할 것인지 핵심만 간단히 적어주세요." required></textarea>
+          <div class="guide">"무엇을, 어떻게" 할 것인지 핵심만 간단히 적어주세요.</div>
+        </div>
+
+        <div class="field">
+          <label>이것이 실행된다면 어떤 변화가 생길까요? (기대 효과) <span class="req">REQUIRED</span></label>
+          <textarea name="impact" placeholder="이 아이디어를 통해 청년들의 마음이 어떻게 회복될지 상상해 보세요." maxlength="500" required></textarea>
+          <div class="guide">이 아이디어를 통해 청년들의 마음이 어떻게 회복될지 상상해 보세요. 500자 내외</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 후속 안내 (전화 검증) -->
+    <section class="section">
+      <header class="section-head">
+        <div class="section-num">04</div>
+        <div class="section-titles">
+          <div class="section-meta">FOLLOW-UP CALL</div>
+          <h3 class="section-title">제출 이후 — 전화 인터뷰 안내</h3>
+        </div>
+      </header>
+      <div class="section-body">
+        <div class="callout">
+          <div class="callout-tag">// PHONE INTERVIEW</div>
+          <p style="margin:0 0 8px;"><strong>제출 완료 후, LOGin Lab 운영팀이 직접 전화드립니다.</strong></p>
+          <p style="margin:0; color: var(--ink-mid); font-size: 14px; line-height: 1.7;">서류만으로는 다 담기지 않은 당신의 진심과 아이디어 배경을 짧게 더 여쭤보기 위함입니다. 5~10분 내외의 부담 없는 통화이며, 평가가 아닌 <strong>이해의 시간</strong>입니다. 기재해주신 연락처로 영업일 기준 7일 이내 연락드립니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 동의 -->
+    <section class="section">
+      <header class="section-head">
+        <div class="section-num">05</div>
+        <div class="section-titles">
+          <div class="section-meta">CONSENT</div>
+          <h3 class="section-title">개인정보 수집 및 이용 동의</h3>
+        </div>
+      </header>
+      <div class="section-body">
+        <p class="section-desc">공모전 운영을 위해 최소한의 개인정보를 수집합니다.</p>
+
+        <div class="consent">
+          <strong>// Data Collection Notice</strong>
+          수집 항목: 성함, 생년월일, 연락처, 이메일 주소.<br>
+          이용 목적: 본 공모전의 참가자 확인, 심사 결과 안내, 시상 및 행사 운영.<br>
+          보유 기간: 공모전 종료 후 3개월 이내 안전하게 파기.
+        </div>
+
+        <div class="options">
+          <div class="option checkbox" style="flex: 1 1 100%;">
+            <input type="checkbox" id="agree" name="agree" required />
+            <label for="agree">위 내용에 동의하며, 신청서를 제출합니다.</label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBMIT -->
+    <div class="submit-area">
+      <div class="submit-area-text">// Ready to Submit</div>
+      <button type="submit" class="submit-btn">신청서 제출하기 →</button>
+    </div>
+  </form>
+
+  <!-- NOTICES -->
+  <section class="tips">
+    <div class="tips-label">// Notice</div>
+    <h3 class="tips-title">신청 전 확인사항</h3>
+
+    <div class="tip-item">
+      <div class="tip-num">01</div>
+      <div><strong>심사 기준</strong> · 진정성 · 공감력 · 실현 가능성 (디자인·문서 완성도는 평가 대상이 아닙니다)</div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-num">02</div>
+      <div><strong>지원 자격</strong> · 만 19~29세, 개인 신청에 한합니다.</div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-num">03</div>
+      <div><strong>전형 절차</strong> · 서류 검토 → 운영팀 전화 인터뷰(5~10분) → 최종 발표</div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-num">04</div>
+      <div><strong>문의</strong> · <span class="mono" style="background: var(--bg-warm); padding: 2px 6px; border-radius: 2px;">login.lab@official.com</span></div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-msg">오늘 하루도 정말 고생 많으셨습니다. <span class="accent">🍃</span></div>
+  <div class="footer-sub">당신이 머문 이 시간이 잠시 멈춰 서서<br>스스로를 돌보는 시간이 되었기를 바랍니다.</div>
+  <div class="footer-meta">
+    <span>© 2026 LOGIN LAB</span>
+    <span>YOUTH WELLNESS RESEARCH</span>
+    <span>FORM v1.0</span>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="modal-tag">SUBMITTED · 제출 완료</div>
+    <h3>제출해주셔서 감사합니다!</h3>
+    <p>꼼꼼히 읽어본 뒤, 영업일 기준 7일 이내<br>운영팀이 직접 전화로 짧은 인터뷰(5~10분)를<br>요청드릴 예정입니다.<br><br>결과와 상관없이, 이 폼을 작성하는 시간 자체가<br>스스로를 돌보는 시간이 되었기를 바랍니다.</p>
+    <button class="modal-btn" onclick="closeModal()">확인</button>
+  </div>
+</div>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    var cats = document.querySelectorAll('input[name="category"]:checked');
+    if (cats.length === 0) {
+      alert('공모 분야를 1개 이상 선택해주세요.');
+      return false;
+    }
+    document.getElementById('modal').classList.add('show');
+    return false;
+  }
+
+  function closeModal() {
+    document.getElementById('modal').classList.remove('show');
+    document.getElementById('applyForm').reset();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+<script>
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('keydown', e => {
+    if (e.key === 'F12') e.preventDefault();
+    if (e.ctrlKey && ['u','s','a'].includes(e.key.toLowerCase())) e.preventDefault();
+  });
+</script>
+</body>
+</html>
